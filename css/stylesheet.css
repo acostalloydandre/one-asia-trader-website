@@ -1,0 +1,575 @@
+body
+{
+   margin: 0;
+   font-family: Arial, Helvetica, 'Dela Gothic One', 'Lato', sans-serif, 'Montserrat';
+}
+
+/* Navigation Bar CSS */
+.navbar {
+    background-color: #f9d464;
+    margin-top: 0px;
+    padding: 15px 0;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar img {
+    max-height: 100px;
+    max-width: 200px;             
+    width: auto;
+}
+
+.navbar .logo {
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar li a
+{
+    color: #191919;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    transition: color 0.3s, background-color 0.3s, font-size 0.3s;
+    padding: 8px 12px; 
+}
+
+.navbar li:not(.logo-li) a:hover 
+{
+    background-color: #f7a600;
+    color: #373990;
+    font-size: 30px;
+}
+
+.navbar .logo-li:hover .logo {
+    transform: scale(1.2);
+}
+
+/*Banner Section CSS*/
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: imageFade 28s infinite;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.main-heading {
+    font-size: 5.5rem;
+    font-weight: bold;
+    font-family: 'Dela Gothic One', sans-serif;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.btn-get-started {
+    display: inline-block;
+    background-color: #f7a600;
+    color: #14213d;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-get-started:hover {
+    background-color: #ffffff;
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Animation --- */
+.slideshow-image:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slideshow-image:nth-child(2) {
+    animation-delay: 4s;
+}
+
+.slideshow-image:nth-child(3) {
+    animation-delay: 8s;
+}
+
+.slideshow-image:nth-child(4) {
+    animation-delay: 12s;
+}
+
+.slideshow-image:nth-child(5) {
+    animation-delay: 16s;
+}
+
+.slideshow-image:nth-child(6) {
+    animation-delay: 20s;
+}
+
+.slideshow-image:nth-child(7) {
+    animation-delay: 24s;
+}
+
+@keyframes imageFade {
+    0% { opacity: 0; }
+    7% { opacity: 1; } 
+    14% { opacity: 1; } 
+    21% { opacity: 0; } 
+    100% { opacity: 0; }
+}
+
+/* Main Content Home CSS */
+.know-us-section {
+    padding: 80px 20px; 
+    text-align: center;
+    background-color: #fdfdfd;
+}
+
+.section-heading {
+    max-width: 700px; 
+    margin: 0 auto 50px auto; 
+}
+
+.section-heading h2 {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 3rem;
+    color: #373990; 
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+
+.box-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.box-card {
+    background-color: #ffffff;
+    border-radius: 15px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box-card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.box-card img {
+    width: 100%;
+    height: auto; 
+    display: block;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+.read-more-link {
+    display: inline-block;
+    margin-top: 15px; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #373990;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+    color: #f7a600; 
+    text-decoration: underline; 
+}
+
+/*Footer CSS*/
+
+.site-footer {
+    background-color: #373990;
+    color: #ecf0f1;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.footer-main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px 0;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 280px;
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-links ul 
+{ 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+.footer-links li 
+{ 
+    margin-bottom: 10px; 
+}
+.footer-links a 
+{ 
+    color: #ecf0f1; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+.footer-links a:hover 
+{ 
+    color: #f7a600; 
+}
+
+.map-container 
+{ 
+    position: relative; 
+    overflow: hidden; 
+    width: 100%; 
+    padding-top: 75%; 
+    border-radius: 8px; 
+}
+.map-container iframe 
+{ 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    border: 0;
+}
+
+.social-links 
+{ 
+    display: flex; 
+    flex-direction: 
+    column; gap: 15px; 
+}
+.social-item 
+{ 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+}
+.social-icon svg 
+{ 
+    width: 24px; 
+    height: 24px; 
+    fill: #ecf0f1; 
+    transition: fill 0.3s ease; 
+}
+.social-link-text 
+{ 
+    color: #ecf0f1; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+.social-item:hover .social-icon svg, .social-item:hover .social-link-text 
+{ 
+    fill: #f7a600; 
+    color: #f7a600; 
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #f7a600; 
+}
+
+/* Company CSS*/
+.banner-image
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 100;
+}
+.content-company
+{
+    margin: 0 10% 0 10%;
+    padding: 80px 20px; 
+    text-align: center;
+    background-color: #fdfdfd;
+}
+.section-heading-content p
+{
+    text-align: justify;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.6;
+}
+.section-content h2 {
+    text-align: justify;
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 3rem;
+    color: #373990; 
+    margin-bottom: 15px;
+}
+.section-content p {
+    text-align: justify;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.6;
+}
+.section-content h3 {
+    color: #373990;
+}
+.section-content h3:hover {
+    color: #f7a600;
+}
+
+/*  Products CSS */
+
+.product-detail-section {
+    padding: 80px 20px;
+    background-color: #fdfdfd;
+}
+
+
+.product-detail-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 40px; 
+    margin-top: 40px; 
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-image-container {
+    flex-basis: 45%;
+}
+
+.product-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-info-container {
+    flex-basis: 55%;
+}
+
+.product-info-container h2 {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 2.8rem;
+    color: #14213d;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.product-info-container p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+.product-detail-container:hover
+{
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    
+    gap: 0;
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 3rem;
+    color: #373990; 
+    margin-bottom: 15px;
+}
+
+
+.contact-section p {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 25px; 
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.contact-section p {
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+/* --- The rest of your form CSS remains the same --- */
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.contact-form .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.contact-form button, .contact-form a button {
+    flex-grow: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #007BFF;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+}
+
+.contact-form button:hover, .contact-form a button:hover {
+    background-color: #0056b3;
+}
+
+.contact-form a {
+    text-decoration: none;
+    flex-grow: 1;
+}
+
+
