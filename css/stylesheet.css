@@ -322,13 +322,18 @@ body
     font-size: 18px;
     margin-bottom: 20px;
     text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-column p{
+    font-family: 'Montserrat', sans-serif;
 }
 
 .footer-links ul 
 { 
     list-style: none; 
     padding: 0; 
-    margin: 0; 
+    margin: 0;
 }
 .footer-links li 
 { 
@@ -339,6 +344,7 @@ body
     color: #ecf0f1; 
     text-decoration: none; 
     transition: color 0.3s ease; 
+    font-family: 'Lato', sans-serif;
 }
 .footer-links a:hover 
 { 
@@ -386,7 +392,8 @@ body
 { 
     color: #ecf0f1; 
     text-decoration: none; 
-    transition: color 0.3s ease; 
+    transition: color 0.3s ease;
+    font-family: 'Lato', sans-serif;
 }
 .social-item:hover .social-icon svg, .social-item:hover .social-link-text 
 { 
@@ -399,6 +406,7 @@ body
     padding: 20px;
     margin-top: 20px;
     border-top: 1px solid #f7a600; 
+    font-family: 'Lato', sans-serif;
 }
 
 /* Company CSS*/
