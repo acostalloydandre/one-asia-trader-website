@@ -451,6 +451,7 @@ body
 }
 .section-content h3 {
     color: #373990;
+    font-family: 'Montserrat', sans-serif;
 }
 .section-content h3:hover {
     color: #f7a600;
