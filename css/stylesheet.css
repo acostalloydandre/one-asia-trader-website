@@ -1,7 +1,8 @@
 body
 {
    margin: 0;
-   font-family: Arial, Helvetica, 'Dela Gothic One', 'Lato', sans-serif, 'Montserrat';
+   font-family: 'Dela Gothic One', 'Lato', 'Montserrat', sans-serif;
+   background-color:  #fdfdfd;
 }
 
 /* Navigation Bar CSS */
@@ -26,7 +27,7 @@ body
 
 .navbar img {
     max-height: 100px;
-    max-width: 200px;             
+    max-width: 200px;           
     width: auto;
 }
 
@@ -35,8 +36,7 @@ body
     transition: transform 0.3s ease-in-out;
 }
 
-.navbar li a
-{
+.navbar li a {
     color: #191919;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -45,8 +45,7 @@ body
     padding: 8px 12px; 
 }
 
-.navbar li:not(.logo-li) a:hover 
-{
+.navbar li:not(.logo-li) a:hover {
     background-color: #f7a600;
     color: #373990;
     font-size: 30px;
@@ -54,6 +53,41 @@ body
 
 .navbar .logo-li:hover .logo {
     transform: scale(1.2);
+}
+
+/* Media Query for Tablets and Mobile Phones (up to 992px) === */
+@media (max-width: 992px) 
+{    
+    .nav-menu 
+    {
+        flex-direction: column;
+    }
+
+    .nav-menu > li:not(.logo-li) 
+    {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        padding: 0;
+        margin: 0 20px;
+        transition: all 0.4s ease-out;
+    }
+    
+    .logo-li {
+        order: -1; 
+        margin-bottom: 10px;
+    }
+    
+    #logo-nav-toggle {
+        cursor: pointer;
+    }
+
+    .nav-open .nav-menu > li:not(.logo-li) {
+        max-height: 100px;
+        opacity: 1;
+        padding: 8px 12px;
+        margin: 5px 20px;
+    }
 }
 
 /*Banner Section CSS*/
@@ -453,8 +487,8 @@ body
 
 .product-info-container h2 {
     font-family: 'Dela Gothic One', sans-serif;
-    font-size: 2.8rem;
-    color: #14213d;
+    font-size: 3rem;
+    color: #373990; 
     margin-top: 0;
     margin-bottom: 20px;
 }
@@ -481,14 +515,15 @@ body
     gap: 0;
     max-width: 1100px;
     margin: 40px auto;
-    background-color: #ffffff;
+    background-color:  #fdfdfd;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-section h2 {
+.contact-section h2 
+{
     text-align: center;
     font-family: 'Dela Gothic One', sans-serif;
     font-size: 3rem;
@@ -496,30 +531,23 @@ body
     margin-bottom: 15px;
 }
 
-
-.contact-section p {
+.contact-section p 
+{
     color: #555;
     margin-top: 0;
     margin-bottom: 25px; 
     font-size: 1rem;
-    line-height: 1.5;
-}
-.contact-section p {
-    color: #555;
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-
-/* --- The rest of your form CSS remains the same --- */
-
-.contact-form .form-group {
+/* Contact CSS */
+.contact-form .form-group 
+{
     margin-bottom: 15px;
 }
 
-.contact-form label {
+.contact-form label 
+{
     display: block;
     margin-bottom: 5px;
     color: #555;
@@ -528,7 +556,9 @@ body
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form input[type="tel"],
-.contact-form textarea {
+
+.contact-form textarea 
+{
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -536,19 +566,22 @@ body
     box-sizing: border-box;
 }
 
-.contact-form textarea {
+.contact-form textarea 
+{
     resize: vertical;
     height: 120px;
 }
 
-.contact-form .buttons {
+.contact-form .buttons 
+{
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
     gap: 10px;
 }
 
-.contact-form button, .contact-form a button {
+.contact-form button, .contact-form a button 
+{
     flex-grow: 1;
     padding: 12px;
     border: none;
@@ -563,13 +596,382 @@ body
     width: 100%;
 }
 
-.contact-form button:hover, .contact-form a button:hover {
+.contact-form button:hover, .contact-form a button:hover 
+{
     background-color: #0056b3;
 }
 
-.contact-form a {
+.contact-form a 
+{
     text-decoration: none;
     flex-grow: 1;
 }
 
+.news-section 
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color:  #fdfdfd;
+    padding: 40px;
+    margin-bottom: 60px;
+}
+  
+.section-title 
+{
+    text-align: center;
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 3rem;
+    color: #373990; 
+    margin-bottom: 40px;
+}
+  
+.news-article 
+{
+    display: flex;
+    align-items: flex-start;
+    padding-top: 25px;
+    border-top: 1px solid #e9ebee;
+}
+  
+.news-article:first-of-type 
+{
+    border-top: none;
+    padding-top: 0;
+}
+  
+.news-image 
+{
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+  
+.news-content 
+{
+    display: flex;
+    flex-direction: column;
+}
+  
+.news-title 
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+  
+.news-description 
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+  
+/*Food Safety CSS*/
+.certifications-section 
+{
+    max-width: 1500px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+  
+.food-safety-title 
+{
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 3rem;
+    color: #373990;
+    margin-bottom: 40px;
+}
+  
+.logos-container 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-bottom: 50px;
+}
+  
+.cert-logo 
+{
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+  
+.safety-paragraph 
+{
+    font-size: 1.1rem;
+    text-align: justify;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+  
+/* Per Product Page CSS */
+.product-section 
+{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 2200px;
+    margin: 50px auto;
+    padding: 50px;
+    background-color:  #fdfdfd;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lato', sans-serif;
+}
 
+.product-image 
+{
+    width: 1000px;
+    height: 1000px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.product-details-container 
+{
+    flex: 1 1 600px;
+    display: flex;
+    flex-direction: column;
+}
+  
+.product-title 
+{
+    font-size: 3rem;;
+    font-family: 'Dela Gothic One', sans-serif;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #373990; 
+    line-height: 1.2;
+}
+  
+.product-description h2
+{
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    color: #555;
+}
+  
+.product-description p 
+{
+    font-size: 16px;
+    margin-bottom: 30px;
+    line-height: 1.7;
+    font-family: 'Lato', sans-serif;
+    color: #555;
+}
+  
+.product-specs 
+{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+  
+.spec-item h3 
+{
+    font-size: 18px;
+    font-weight: 600;
+    color: #373990; 
+    margin: 0 0 5px 0;
+    line-height: 1.7;
+    font-family: 'Montserrat', sans-serif;
+}
+.spec-item p
+{
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.7;
+    font-family: 'Lato', sans-serif;
+    color: #555;
+}
+.features-list
+{
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: 'Lato', sans-serif;
+    color: #555;
+} 
+.features-list li 
+{
+    margin-bottom: 8px;
+}
+.features-list li::marker
+{
+   color: #f7a600; 
+}
+
+/* Tablet (769px to 1024px) */
+@media (max-width: 1024px) {
+
+    .main-heading 
+    {
+        font-size: 4.5rem;
+    }
+    .tagline 
+    {
+        font-size: 1.3rem;
+    }
+    .box-grid 
+    {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 90%;
+    }
+    .footer-main-content 
+    {
+        gap: 30px;
+    }
+    .content-company 
+    {
+        margin: 0 5%;
+    }
+    .product-detail-container, .product-section 
+    {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+        margin: 20px auto;
+    }
+    .news-article 
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+    .news-image 
+    {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .product-image 
+    {
+       width: 100%; 
+    }
+}
+
+
+/* Mobile Phone (up to 768px) */
+@media (max-width: 768px) {
+
+    /* Banner */
+    .banner-container 
+    {
+        height: 60vh;
+    }
+    .main-heading 
+    {
+        font-size: 2.8rem;
+    }
+    .tagline 
+    {
+        font-size: 1.1rem;
+    }
+    .btn-get-started 
+    {
+        padding: 12px 28px;
+        font-size: 1rem;
+    }
+
+    .know-us-section, .content-company, .product-detail-section, .news-section, .certifications-section 
+    {
+        padding: 40px 15px;
+    }
+    .section-heading h2, .section-content h2, .product-info-container h2, .contact-section h2, .section-title, .food-safety-title, .product-title 
+    {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+    .section-heading-content p, .section-content p 
+    {
+         text-align: left;
+    }
+
+    /* Card Grid */
+    .box-grid 
+    {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    /* Company & Product Pages */
+    .content-company 
+    {
+        margin: 0;
+    }
+    .product-detail-container, .product-section 
+    {
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    
+    /* News Section */
+    .news-article 
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+    .news-image 
+    {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    /* Footer */
+    .footer-main-content 
+    {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-column 
+    {
+        min-width: 100%;
+    }
+    .social-links 
+    {
+        align-items: center;
+    }
+
+    /* Food Safety Logos */
+    .cert-logo 
+    {
+        width: 150px;
+        height: 150px;
+        gap: 20px;
+    }
+    
+    /* Product Box Style Section */
+    .product-section 
+    {
+        padding: 20px;
+    }
+    .product-details-container 
+    {
+        flex-basis: 100%;
+    }
+}

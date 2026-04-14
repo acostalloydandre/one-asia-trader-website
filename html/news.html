@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Asia Trader</title>
+    <title>One Asia Trader - News</title>
     <link rel="stylesheet" href="../css/stylesheet.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dela+Gothic+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mouse+Memoirs&family=Noto+Sans+JP:wght@100..900&family=Praise&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -13,21 +13,63 @@
         <!-- Navigation Bar -->
         <nav>
             <div class="navbar">
-                <ul>
+                <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../html/company.html">Our Company</a></li>
-                    <li><a href="../html/news.html">News</a></li>
-                    <!-- Logo is now wrapped in its own list item for proper alignment -->
-                    <li class="logo-li"><a href="../index.html"><img src="../Assets/Misc/one asia trader logo png.png" alt="logo" class="logo"></a></li>
-                    <li><a href="../html/products.html">Products</a></li>
-                    <li><a href="../html/foodsafety.html">Food Safety</a></li>
-                    <li><a href="../html/contact.html">Contact Us</a></li>
+                    <li><a href="./company.html">Our Company</a></li>
+                    <li><a href="./news.html">News</a></li>
+                    
+                    <li class="logo-li">
+                        <a href="../index.html" id="logo-nav-toggle">
+                            <img src="../Assets/Misc/one asia trader logo png.png" alt="logo" class="logo">
+                        </a>
+                    </li>
+                    
+                    <li><a href="./products.html">Products</a></li>
+                    <li><a href="./foodsafety.html">Food Safety</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </nav>  
     </header>
+
     <main>
-        
+        <section class="news-section">
+            <h1 class="section-title">News</h1>
+          
+            <!-- Article 1 -->
+            <article class="news-article">
+              <img src="../Assets/Exhibits/Padday Na Lima - May 22 - 24 2025.jpg" alt="News Image 1" class="news-image">
+              <div class="news-content">
+                <h2 class="news-title">IFEX Philippines International Food, Beverage and Ingredients: Trade Show</h2>
+                <p class="news-description">Visit us at IFEX Philippines, World Trade Center and be part of our exciting food exhibit. We’re proud to share our products with the public, including our tasty coco jam and crunchy banana chips. See you there!</p>
+                <p class="news-description"><strong>When:</strong> May 22 - 24 2025</p>
+                <p class="news-description"><strong>Where:</strong> World Trade Center, Metro Manila, Philippines</p>
+              </div>
+            </article>
+          
+            <!-- Article 2 -->
+            <article class="news-article">
+              <img src="../Assets/Exhibits/Sial Paris - Inspire Food Business - Oct 19 - 23 -2024.jpg" alt="News Image 2" class="news-image">
+              <div class="news-content">
+                <h2 class="news-title">Sial Inspire Food Business Paris</h2>
+                <p class="news-description">Join us at the international exhibit of SIAL Inspire Food Business Paris and take pride in our authentic Philippine-made products! Experience the rich flavors of our delicious coco jam and crunchy banana chips, crafted with care and passion. We’re excited to showcase the best of the Philippines to the world. Don’t miss the chance to be part of this global celebration of flavor. See you there!</p>
+                <p class="news-description"><strong>When:</strong> October  19 - 23 2024</p>
+                <p class="news-description"><strong>Where:</strong> Pa, des Exposition de Paris-Nord Villepinte Paris, France</p>
+              </div>
+            </article>
+          
+            <!-- Article 3 -->
+            <article class="news-article">
+              <img src="../Assets/Exhibits/IFEX World Trade Center - May 10 - 12 - 2024 Philippines.jpg" alt="News Image 3" class="news-image">
+              <div class="news-content">
+                <h2 class="news-title">IFEX Philippines Region 2 Food Expo</h2>
+                <p class="news-description">Discover the exciting flavors at the IFEX Philippines Region 2 Food Expo! Experience the best of Region 2’s offerings, including our delicious coco jam and crispy banana chips. Taste the unique flavors of the region and let's create unforgettable memories. We look forward to welcoming you!</p>
+                <p class="news-description"><strong>When:</strong> May 10 - 12 2024</p>
+                <p class="news-description"><strong>Where:</strong> World Trade Center, Metro Manila, Philippines</p>
+              </div>
+            </article>
+          
+          </section>
     </main>
     <footer class="site-footer">
        
@@ -80,5 +122,20 @@
             <p>&copy; 2026 One Asia Trader. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const logoToggleButton = document.getElementById('logo-nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+    
+        logoToggleButton.addEventListener('click', function(event) {
+            const screenWidth = window.innerWidth;
+    
+            if (screenWidth <= 992) {
+                event.preventDefault(); 
+                document.body.classList.toggle('nav-open');
+            }
+        });
+    </script>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Asia Trader</title>
+    <title>One Asia Trader - Our Company</title>
     <link rel="stylesheet" href="../css/stylesheet.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dela+Gothic+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mouse+Memoirs&family=Noto+Sans+JP:wght@100..900&family=Praise&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
@@ -13,19 +13,25 @@
         <!-- Navigation Bar -->
         <nav>
             <div class="navbar">
-                <ul>
+                <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="../html/company.html">Our Company</a></li>
-                    <li><a href="../html/news.html">News</a></li>
-                    <!-- Logo is now wrapped in its own list item for proper alignment -->
-                    <li class="logo-li"><a href="../index.html"><img src="../Assets/Misc/one asia trader logo png.png" alt="logo" class="logo"></a></li>
-                    <li><a href="../html/products.html">Products</a></li>
-                    <li><a href="../html/foodsafety.html">Food Safety</a></li>
-                    <li><a href="../html/contact.html">Contact Us</a></li>
+                    <li><a href="./company.html">Our Company</a></li>
+                    <li><a href="./news.html">News</a></li>
+                    
+                    <li class="logo-li">
+                        <a href="../index.html" id="logo-nav-toggle">
+                            <img src="../Assets/Misc/one asia trader logo png.png" alt="logo" class="logo">
+                        </a>
+                    </li>
+                    
+                    <li><a href="./products.html">Products</a></li>
+                    <li><a href="./foodsafety.html">Food Safety</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </nav>  
     </header>
+
     <!-- Main Content -->
     <main>
         <section class="hero">
@@ -74,6 +80,7 @@
             </div>
         </section>
     </main>
+
      <!-- Footer -->
      <footer class="site-footer">
        
@@ -126,5 +133,20 @@
             <p>&copy; 2026 One Asia Trader. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const logoToggleButton = document.getElementById('logo-nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+    
+        logoToggleButton.addEventListener('click', function(event) {
+            const screenWidth = window.innerWidth;
+    
+            if (screenWidth <= 992) {
+                event.preventDefault(); 
+                document.body.classList.toggle('nav-open');
+            }
+        });
+    </script>
+
 </body>
 </html>
