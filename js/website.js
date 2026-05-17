@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            alert(`Salamat, ${name}! Your message has been successfully sent to One Asia Trader.`);
+            alert(`Thank you, ${name}! Your message has been successfully sent to One Asia Trader.`);
             
             contactForm.reset();
             if(countrySelect) updatePhoneRestrictions();
