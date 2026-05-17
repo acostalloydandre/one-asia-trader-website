@@ -8,7 +8,6 @@ body
 /* Navigation Bar CSS */
 .navbar {
     background-color: #f9d464;
-    margin-top: 0px;
     padding: 5px 0;
 }
 
@@ -383,7 +382,6 @@ body
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 1;
 }
 .content-company
 {
@@ -392,7 +390,7 @@ body
     text-align: center;
     background-color: #fdfdfd;
 }
-.section-heading-content p
+.section-heading-content p, .section-content p
 {
     text-align: justify;
     font-family: 'Lato', sans-serif;
@@ -407,13 +405,7 @@ body
     color: #373990; 
     margin-bottom: 15px;
 }
-.section-content p {
-    text-align: justify;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.4rem;
-    color: #555;
-    line-height: 1.6;
-}
+
 .section-content h3 {
     color: #373990;
     font-family: 'Montserrat', sans-serif;
@@ -435,9 +427,7 @@ body
     align-items: center;
     gap: 60px;
     max-width: 1100px;
-    margin: 0 auto;
-    margin-bottom: 40px; 
-    margin-top: 40px; 
+    margin: 40px auto; 
     background-color: #ffffff;
     padding: 40px;
     border-radius: 15px;
@@ -493,7 +483,6 @@ body
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-section h2 
@@ -549,7 +538,7 @@ body
     height: 120px;
 }
 
-/* --- NEW: Phone Input Group Layout --- */
+/*  Phone Input Group Layout */
 .phone-input-group {
     display: flex;
     gap: 10px;
@@ -564,7 +553,6 @@ body
 .phone-input-group input[type="tel"] {
     flex: 1; 
 }
-/* ------------------------------------- */
 
 .contact-form .buttons 
 {
@@ -596,13 +584,6 @@ body
 .contact-form a.btn:hover 
 {
     background-color: #0056b3;
-}
-
-.contact-form a 
-{
-    text-decoration: none;
-    flex-grow: 1;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .news-section 
@@ -736,7 +717,6 @@ body
     width: 1000px;
     height: 1000px;
     max-width: 100%;
-    height: auto;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -751,7 +731,7 @@ body
   
 .product-title 
 {
-    font-size: 3rem;;
+    font-size: 3rem;
     font-family: 'Dela Gothic One', sans-serif;
     margin-top: 0;
     margin-bottom: 20px;
@@ -769,12 +749,11 @@ body
     color: #555;
 }
   
-.product-description p 
+.product-description p, .spec-item p, .features-list 
 {
     font-size: 16px;
     margin-bottom: 30px;
     line-height: 1.7;
-    font-family: 'Lato', sans-serif;
     color: #555;
 }
   
@@ -796,21 +775,13 @@ body
 }
 .spec-item p
 {
-    font-size: 16px;
     margin: 0;
-    line-height: 1.7;
-    font-family: 'Lato', sans-serif;
-    color: #555;
 }
 .features-list
 {
     list-style-type: disc;
     margin: 0;
-    padding-left: 20px;
-    font-size: 16px;
-    line-height: 1.7;
-    font-family: 'Lato', sans-serif;
-    color: #555;
+    padding-left: 20px;;
 } 
 .features-list li 
 {
@@ -889,7 +860,8 @@ body
     }
     .product-image 
     {
-       width: 100%; 
+       width: 100%;
+       height: auto;
     }
     .get-now-button 
     {
@@ -1044,10 +1016,6 @@ body
     }
     
     /* Product Box Style Section */
-    .product-section 
-    {
-        padding: 20px;
-    }
     .product-details-container 
     {
         flex-basis: 100%;
