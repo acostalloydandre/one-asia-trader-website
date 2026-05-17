@@ -3,46 +3,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector('.contact-form');
     const nameInput = document.getElementById('name');
     const phoneInput = document.getElementById('phone');
-    const countrySelect = document.getElementById('countryCode');
 
-    const phoneRules = {
-        '+63': { length: 10, placeholder: "932 567 3984" },
-        '+1':  { length: 10, placeholder: "212 555 1234" },
-        '+44': { length: 10, placeholder: "7400 123456" },
-        '+81': { length: 10, placeholder: "90 1234 5678" },
-        '+61': { length: 9,  placeholder: "412 345 678" }
-    };
-
-    function updatePhoneRestrictions() {
-        const rule = phoneRules[countrySelect.value];
-        if (rule) {
-            phoneInput.setAttribute('minlength', rule.length);
-            phoneInput.setAttribute('maxlength', rule.length);
-            phoneInput.setAttribute('placeholder', rule.placeholder);
-            
-            if (phoneInput.value.length > rule.length) {
-                phoneInput.value = phoneInput.value.slice(0, rule.length);
-            }
-        }
+    if (nameInput) {
+        nameInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+        });
     }
 
-    updatePhoneRestrictions();
-
-    countrySelect.addEventListener('change', updatePhoneRestrictions);
-
-
-    nameInput.addEventListener('input', function() {
-        this.value = this.value.replace(/[0-9]/g, '');
-    });
-
-    phoneInput.addEventListener('input', function() {
-        this.value = this.value.replace(/\D/g, '');
-        
-        const rule = phoneRules[countrySelect.value];
-        if (this.value.length > rule.length) {
-            this.value = this.value.slice(0, rule.length);
-        }
-    });
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    }
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
@@ -50,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const name = nameInput.value.trim();
             const email = document.getElementById('email').value.trim();
-            const countryCode = countrySelect.value;
             const phone = phoneInput.value.trim();
             const message = document.getElementById('message').value.trim();
 
@@ -65,19 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const requiredLength = phoneRules[countryCode].length;
-            if (phone.length !== requiredLength) {
-                alert(`Please enter exactly ${requiredLength} digits for this country code. You currently have ${phone.length}.`);
-                return;
-            }
-
-            const fullPhoneNumber = `${countryCode} ${phone}`;
-            console.log('Form Data Prepared for Sending:', { name, email, phone: fullPhoneNumber, message });
-            
             alert(`Salamat, ${name}! Your message has been successfully sent to One Asia Trader.`);
 
             contactForm.reset();
-            updatePhoneRestrictions(); 
         });
     }
 });
