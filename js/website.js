@@ -27,19 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-
     if(countrySelect) {
         updatePhoneRestrictions();
         countrySelect.addEventListener('change', updatePhoneRestrictions);
     }
-
 
     if (nameInput) {
         nameInput.addEventListener('input', function() {
             this.value = this.value.replace(/[^a-zA-Z\s]/g, ''); 
         });
     }
-
 
     if (phoneInput) {
         phoneInput.addEventListener('input', function() {
@@ -54,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
  
@@ -65,13 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const countryCode = countrySelect ? countrySelect.value : '';
             const phone = phoneInput ? phoneInput.value.trim() : '';
             const message = document.getElementById('message') ? document.getElementById('message').value.trim() : '';
-
     
             if (!name || !email || !phone || !message) {
                 alert('Please fill out all required fields.');
                 return; 
             }
-
 
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailPattern.test(email)) {
@@ -87,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-
             alert(`Salamat, ${name}! Your message has been successfully sent to One Asia Trader.`);
             
             contactForm.reset();
@@ -100,12 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
 const logoToggleButton = document.getElementById('logo-nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-logoToggleButton.addEventListener('click', function(event) {
-    const screenWidth = window.innerWidth;
+if (logoToggleButton) {
+    logoToggleButton.addEventListener('click', function(event) {
+        const screenWidth = window.innerWidth;
 
-    if (screenWidth <= 992) {
-        event.preventDefault(); 
-        document.body.classList.toggle('nav-open');
-    }
-});
-
+        if (screenWidth <= 992) {
+            event.preventDefault(); 
+            document.body.classList.toggle('nav-open');
+        }
+    });
+}
