@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- NEW: Dynamic Country Phone Rules ---
     // This maps each country code to its exact required digit length (excluding the country code itself)
     const phoneRules = {
-        '+63': { length: 10, placeholder: "932 567 3984" }, // Philippines (10 digits)
-        '+1':  { length: 10, placeholder: "212 555 1234" }, // USA (10 digits)
-        '+44': { length: 10, placeholder: "7400 123456" },  // UK (Usually 10 digits)
-        '+81': { length: 10, placeholder: "90 1234 5678" }, // Japan (10 digits)
-        '+61': { length: 9,  placeholder: "412 345 678" }   // Australia (9 digits)
+        '+63': { length: 9, placeholder: "932 567 3984" }, // Philippines (10 digits)
+        '+1':  { length: 9, placeholder: "212 555 1234" }, // USA (10 digits)
+        '+44': { length: 9, placeholder: "7400 123456" },  // UK (Usually 10 digits)
+        '+81': { length: 9, placeholder: "90 1234 5678" }, // Japan (10 digits)
+        '+61': { length: 8,  placeholder: "412 345 678" }   // Australia (9 digits)
     };
 
     // Function to update the input field based on the selected dropdown value
