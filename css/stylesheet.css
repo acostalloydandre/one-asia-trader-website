@@ -9,7 +9,7 @@ body
 .navbar {
     background-color: #f9d464;
     margin-top: 0px;
-    padding: 15px 0;
+    padding: 5px 0;
 }
 
 .navbar ul {
@@ -26,7 +26,7 @@ body
 }
 
 .navbar img {
-    max-height: 100px;
+    max-height: 60px;
     max-width: 200px;           
     width: auto;
 }
@@ -48,7 +48,7 @@ body
 .navbar li:not(.logo-li) a:hover {
     background-color: #f7a600;
     color: #373990;
-    font-size: 30px;
+    font-size: 22px;
 }
 
 .navbar .logo-li:hover .logo {
@@ -480,6 +480,8 @@ body
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
+/* Contact CSS */
+
 .contact-section {
     display: flex;
     flex-direction: column;
@@ -505,14 +507,15 @@ body
 
 .contact-section p 
 {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.4rem;
     color: #555;
     margin-top: 0;
     margin-bottom: 25px; 
-    font-size: 1rem;
     line-height: 1.6;
 }
 
-/* Contact CSS */
 .contact-form .form-group 
 {
     margin-bottom: 15px;
@@ -529,7 +532,7 @@ body
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form input[type="tel"],
-
+.contact-form select.country-code-select,
 .contact-form textarea 
 {
     width: 100%;
@@ -537,14 +540,31 @@ body
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contact-form textarea 
 {
     resize: vertical;
     height: 120px;
-    font-family: 'Montserrat', sans-serif;
 }
+
+/* --- NEW: Phone Input Group Layout --- */
+.phone-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.country-code-select {
+    flex: 0 0 100px; 
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.phone-input-group input[type="tel"] {
+    flex: 1; 
+}
+/* ------------------------------------- */
 
 .contact-form .buttons 
 {
@@ -554,7 +574,8 @@ body
     gap: 10px;
 }
 
-.contact-form button, .contact-form a button 
+.contact-form button.btn-submit, 
+.contact-form a.btn 
 {
     flex-grow: 1;
     padding: 12px;
@@ -567,11 +588,12 @@ body
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    width: 100%;
     font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
 }
 
-.contact-form button:hover, .contact-form a button:hover 
+.contact-form button.btn-submit:hover, 
+.contact-form a.btn:hover 
 {
     background-color: #0056b3;
 }
@@ -877,6 +899,10 @@ body
         padding: 18px 45px;
         font-size: 1.2rem;
     }
+    .contact-section {
+        padding: 30px;
+        margin: 20px 5%;
+    }
 }
 
 /* Tablets and Mobile Phones (992px) = Navigation Bar */
@@ -912,6 +938,15 @@ body
         padding: 8px 12px;
         margin: 5px 20px;
     }
+    .contact-form .buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-form button.btn-submit, 
+    .contact-form a.btn {
+        width: 100%;
+    }
 }
 
 /* Mobile Phone (up to 768px) */
@@ -935,7 +970,6 @@ body
         padding: 12px 28px;
         font-size: 1rem;
     }
-
     .know-us-section, .content-company, .product-detail-section, .news-section, .certifications-section 
     {
         padding: 40px 15px;
@@ -944,6 +978,9 @@ body
     {
         font-size: 2.2rem;
         text-align: center;
+    }
+    .contact-section {
+        margin: 20px 10px;
     }
     .section-heading-content p, .section-content p 
     {
