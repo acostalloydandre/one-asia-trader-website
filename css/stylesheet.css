@@ -39,6 +39,11 @@ header {
     border-radius: 5px;
 }
 
+.site-footer li a.active {
+    background-color: transparent;
+    color:  #f7a600;
+}
+
 .navbar img {
     max-height: 60px;
     max-width: 200px;           
@@ -112,7 +117,7 @@ header {
 
 .banner-content {
     position: relative;
-    z-index: 2;
+    z-index: 2; 
     color: white;
     text-align: center;
     padding: 0 20px;
