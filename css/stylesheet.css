@@ -29,6 +29,12 @@ body
     margin: 0 20px;
 }
 
+.navbar li a.active {
+    background-color: #f7a600;
+    color: #373990;
+    border-radius: 5px;
+}
+
 .navbar img {
     max-height: 60px;
     max-width: 200px;           
@@ -439,10 +445,12 @@ body
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 .product-image-container {
     flex-basis: 45%;
+    padding-top: 60px;
 }
 
 .product-image-container img {
@@ -453,6 +461,7 @@ body
 
 .product-info-container {
     flex-basis: 55%;
+
 }
 
 .product-info-container h2 {
@@ -742,7 +751,7 @@ body
 {
     font-size: 3rem;
     font-family: 'Dela Gothic One', sans-serif;
-    margin-top: 0;
+    margin-top: 50px;
     margin-bottom: 20px;
     color: #373990; 
     line-height: 1.2;
@@ -855,6 +864,7 @@ body
         padding: 30px;
         margin: 20px auto;
     }
+ 
     .news-article 
     {
         flex-direction: column;
@@ -871,6 +881,7 @@ body
     {
        width: 100%;
        height: auto;
+       margin-top: 50px;
     }
     .get-now-button 
     {
