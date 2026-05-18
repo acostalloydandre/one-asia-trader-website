@@ -9,6 +9,11 @@ body
 .navbar {
     background-color: #f9d464;
     padding: 5px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar ul {
