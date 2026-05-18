@@ -880,7 +880,7 @@ body
         font-size: 1.2rem;
     }
     .contact-section {
-        padding: 30px;
+        padding-top: 100px;
         margin: 20px 5%;
     }
 }
@@ -933,6 +933,8 @@ body
 @media (max-width: 768px) {
 
     /* Banner */
+
+
     .banner-container 
     {
         height: 60vh;
