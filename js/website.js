@@ -89,17 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Logo Phone Function
-const logoToggleButton = document.getElementById('logo-nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
+// 
+// Hamburger Side Menu Function - Phone
+const hamburgerMenu = document.getElementById('hamburger-menu');
 
-if (logoToggleButton) {
-    logoToggleButton.addEventListener('click', function(event) {
-        const screenWidth = window.innerWidth;
-
-        if (screenWidth <= 992) {
-            event.preventDefault(); 
-            document.body.classList.toggle('nav-open');
-        }
+if (hamburgerMenu) {
+    hamburgerMenu.addEventListener('click', function() {
+        document.body.classList.toggle('nav-open');
     });
 }

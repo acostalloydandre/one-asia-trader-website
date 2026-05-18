@@ -9,13 +9,14 @@ body
 .navbar {
     background-color: #f9d464;
     padding: 5px 0;
-    position: fixed;
+    position: sticky; 
     top: 0;
-    left: 0;
-    width: 100%;
     z-index: 1000;
 }
 
+.mobile-logo {
+    display: none;
+}
 .navbar ul {
     display: flex;
     justify-content: center;
@@ -894,49 +895,96 @@ body
         padding-top: 100px;
         margin: 20px 5%;
     }
+    .hamburger {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 6px;
+        z-index: 1000;
+    }
+    .hamburger .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #373990;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
 }
 
 /* Tablets and Mobile Phones (992px) = Navigation Bar */
-@media (max-width: 992px) 
-{    
-    .nav-menu 
-    {
-        flex-direction: column;
+@media (max-width: 992px) {    
+    .navbar {
+        padding: 10px 20px;
+        display: flex;
+        justify-content: flex-end; 
+        align-items: center;
     }
 
-    .nav-menu > li:not(.logo-li) 
-    {
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        padding: 0;
-        margin: 0 20px;
-        transition: all 0.4s ease-out;
+    .desktop-logo { display: none !important; }
+
+    .mobile-logo {
+        display: block;
+        position: absolute;
+        left: 50%; 
+        transform: translateX(-50%); 
+        z-index: 1001; 
     }
     
-    .logo-li {
-        order: -1; 
-        margin-bottom: 10px;
-    }
-    
-    #logo-nav-toggle {
-        cursor: pointer;
+    .hamburger {
+        display: flex;
+        z-index: 1002; 
     }
 
-    .nav-open .nav-menu > li:not(.logo-li) {
-        max-height: 100px;
-        opacity: 1;
-        padding: 8px 12px;
-        margin: 5px 20px;
-    }
-    .contact-form .buttons {
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 250px;
+        height: 100vh;
+        background-color: #fdfdfd;
         flex-direction: column;
-        gap: 15px;
+        justify-content: flex-start;
+        padding-top: 100px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.4s ease;
+        z-index: 1001; 
     }
 
-    .contact-form button.btn-submit, 
-    .contact-form a.btn {
-        width: 100%;
+    .nav-menu li { 
+        margin: 15px 0; 
+        text-align: center; 
+    }
+    .nav-menu li a 
+    { 
+        display: block; 
+        font-size: 1.3rem; 
+    }
+
+    .nav-open .nav-menu 
+    { 
+        right: 0; 
+    }
+    .nav-open .hamburger .bar:nth-child(1) 
+    { 
+        transform: translateY(9px) rotate(45deg);
+    }
+    .nav-open .hamburger .bar:nth-child(2) 
+    { 
+        opacity: 0; 
+    }
+    .nav-open .hamburger .bar:nth-child(3) 
+    { 
+        transform: translateY(-9px) rotate(-45deg); 
+    }
+
+    .contact-form .buttons 
+    { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    .contact-form button.btn-submit, .contact-form a.btn 
+    { 
+        width: 100%; 
     }
 }
 
