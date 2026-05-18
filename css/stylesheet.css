@@ -60,10 +60,18 @@ body
     background-color: #f7a600;
     color: #373990;
     font-size: 22px;
+    border-radius: 5px;
 }
 
 .navbar .logo-li:hover .logo {
     transform: scale(1.2);
+}
+
+.navbar li a.active {
+    background-color: #f7a600;
+    color: #373990;
+    font-size: 22px;
+    border-radius: 5px; 
 }
 
 /*Banner Section CSS*/
@@ -498,7 +506,6 @@ body
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    margin-top: 170px;
 }
 
 .contact-section h2 
@@ -608,7 +615,6 @@ body
     max-width: 1200px;
     margin: 0 auto;
     background-color:  #fdfdfd;
-    padding: 40px;
     margin-bottom: 60px;
 }
   
@@ -728,6 +734,34 @@ body
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     font-family: 'Lato', sans-serif;
     position: relative;
+}
+
+/* Product Navigation Buttons (Back & Next) */
+.product-nav-buttons {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #373990;
+    border: 2px solid #373990;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #373990;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .product-image 
@@ -891,7 +925,6 @@ body
         font-size: 1.2rem;
     }
     .contact-section {
-        padding-top: 100px;
         margin: 20px 5%;
     }
     .hamburger {
@@ -908,6 +941,12 @@ body
         border-radius: 3px;
         transition: all 0.3s ease;
     }
+    .product-detail-container, .product-section, .news-section {
+        margin: 30px 20px; 
+        padding: 30px;
+        box-sizing: border-box;
+        width: auto;
+    }
 }
 
 /* Tablets and Mobile Phones (992px) = Navigation Bar */
@@ -915,22 +954,24 @@ body
     .navbar {
         padding: 10px 20px;
         display: flex;
-        justify-content: flex-end; 
+        justify-content: center;
         align-items: center;
+        position: relative;
     }
 
-    .desktop-logo { display: none !important; }
+    .desktop-logo {
+        display: none !important; 
+    }
 
     .mobile-logo {
         display: block;
-        position: absolute;
-        left: 50%; 
-        transform: translateX(-50%); 
         z-index: 1001; 
     }
-    
+
     .hamburger {
         display: flex;
+        position: absolute;
+        right: 20px;
         z-index: 1002; 
     }
 
@@ -992,7 +1033,6 @@ body
 
     /* Banner */
 
-
     .banner-container 
     {
         height: 60vh;
@@ -1039,27 +1079,37 @@ body
     {
         margin: 0;
     }
-    .product-detail-container, .product-section 
-    {
-        flex-direction: column;
-        padding: 20px;
-        margin: 20px 10px;
+    .product-detail-container, .product-section, .news-section {
+        margin: 20px 15px !important;
+        padding: 20px !important;
+        box-sizing: border-box;
+        width: auto;
+        border-radius: 12px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
     
     /* News Section */
-    .news-article 
-    {
-        flex-direction: column;
-        align-items: center;
-    }
-    .news-image 
-    {
+    .news-image, .product-image-container img, .product-image {
         width: 100%;
         height: auto;
+        border-radius: 8px;
         margin-right: 0;
         margin-bottom: 20px;
+        box-sizing: border-box;
     }
 
+    .news-content, .product-info-container, .product-details-container {
+        padding: 0 5px; 
+        box-sizing: border-box;
+        text-align: left;
+    }
+    .news-article {
+        flex-direction: column;
+        align-items: center;
+        border-top: none; 
+    }
+    
     /* Footer */
     .footer-main-content 
     {
@@ -1096,5 +1146,17 @@ body
         padding: 15px 40px;
         font-size: 1.1rem;
     }
+    .product-nav-buttons {
+        flex-direction: column; 
+        gap: 15px; 
+        order: 3;
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
     
+    .nav-btn {
+        width: 100%;
+        text-align: center; 
+        box-sizing: border-box;
+    }
 }
